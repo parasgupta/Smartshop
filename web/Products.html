@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html ng-app="Home">
+
+	<head>
+		<title>SmartCart</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="SmartCart.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="Home.html"><span class="Name" id="NamePart1">Smart</span> <span class="Name" id="NamePart2">Cart</span></a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<span id="Heading">The best mobile phones for you -</span>
+				</div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="container-fluid" ng-controller="Products">
+			<div ng-repeat="i in [0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 100]">
+				<div class="row">
+					<div class="col-sm-2">
+					</div>
+					<div class="col-sm-2 text-center" ng-repeat="b in a.slice(i, i+4)">
+						<div class="Products">
+							<br>
+							<br>
+							<img src="./Images/Mobile1.jpg" class="img-rounded">
+							<br>
+							<br>
+							<span class="ProductsName">{{b.name}}</span>
+							<br>
+							<br>
+							<span class="ProductsCost">{{b.cost}}</span>
+							<br>
+                                                        <br>
+							<div class="row">
+								<div class="col-sm-10 col-sm-offset-1">
+                                                                    <span class="ProductsCost">Score : {{b.good}}</span>
+									
+								</div>
+							</div>
+							<hr>
+							<a href="{{b.buy}}" class="btn btn-default" target="_blank">Buy</a>
+							<br>
+							<br>
+						</div>
+					</div>
+				</div>
+				<br>
+				<br>
+			</div>
+		</div>
+		<script src="JQuery/jquery-1.11.1.min.js"></script>
+		<script src="AngularJS/angular.min.js"></script>
+		<script src="Bootstrap/js/bootstrap.min.js"></script>
+		<script src="SmartCart.js"></script>
+	</body>
+
+</html>
