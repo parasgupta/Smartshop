@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html ng-app="Home">
+
+	<head>
+		<title>SmartCart</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="SmartCart.css" rel="stylesheet">
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="Home.html"><span class="Name" id="NamePart1">Smart</span> <span class="Name" id="NamePart2">Cart</span></a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+			</div>
+		</nav>
+		<div id="Questionnaire">
+			<div id="QuestionnairePart1">
+				<div id="QuestionnairePart2">
+					<div class="container">
+						<br>
+						<br>
+						<br>
+						<br>
+						<div id="Form">
+							<br>
+							<div class="row">
+								<div class="col-sm-12 text-center">
+									<span id="QuestionnaireHeading">A questionnaire to help us find the right mobile phone for you -</span>
+								</div>
+							</div>
+							<br>
+							<div class="row">
+								<div class="col-sm-8 col-sm-offset-2" >
+									<div ng-controller="Questionnaire">
+										<form action="ProductServlet" method="post">
+											<div id="form-group" ng-repeat="b in a">
+												<span id="QuestionnaireQuestion">{{$index+1}}. {{b.question}}</span>
+												<div class="radio">
+													<label id="QuestionnaireOption" ng-repeat="c in b.options">
+														<input type="radio" name="{{b.name}}" value="{{c}}"> {{c}}
+														&nbsp;
+														&nbsp;
+													</label>
+												</div>
+												<br>
+											</div>
+											<div class="row">
+												<div class="col-sm-12 text-center">
+													<input type="submit" value="Done" class="btn btn-primary">
+												</div>
+											</div>
+											<br>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<br>
+					<br>
+				</div>
+			</div>
+		</div>
+		<script src="JQuery/jquery-1.11.1.min.js"></script>
+		<script src="AngularJS/angular.min.js"></script>
+		<script src="Bootstrap/js/bootstrap.min.js"></script>
+		<script src="SmartCart.js"></script>
+	</body>
+
+</html>
